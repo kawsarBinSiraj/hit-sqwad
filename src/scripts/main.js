@@ -131,7 +131,7 @@ $(function () {
 
 $(function () {
     const header = $("#main-header");
-    const innerHeight = header.innerHeight() || 100;
+    const innerHeight = header.innerHeight() * 3 || 100;
     const scrollThreshold = innerHeight;
     let isFixed = false;
 
