@@ -129,27 +129,27 @@ $(function () {
  * at :- 15/09/2025 09:42:23
  */
 
-$(function () {
-    const header = $("#main-header");
-    const innerHeight = header.innerHeight() * 3 || 100;
-    const scrollThreshold = innerHeight;
-    let isFixed = false;
+// $(function () {
+//     const header = $("#main-header");
+//     const innerHeight = header.innerHeight() * 3 || 100;
+//     const scrollThreshold = innerHeight;
+//     let isFixed = false;
 
-    $(window).on("wheel", function (e) {
-        const deltaY = e.originalEvent && e.originalEvent.deltaY;
-        const scrollTop = $(window).scrollTop();
+//     $(window).on("wheel", function (e) {
+//         const deltaY = e.originalEvent && e.originalEvent.deltaY;
+//         const scrollTop = $(window).scrollTop();
 
-        if (scrollTop >= scrollThreshold && !isFixed) {
-            // Make header fixed with slide down animation
-            header.addClass("header-fixed");
-            isFixed = true;
-        } else if (scrollTop <= 1 && isFixed) {
-            // Remove fixed class with slide up animation
-            header.removeClass("header-fixed");
-            isFixed = false;
-        }
-    });
-});
+//         if (scrollTop >= scrollThreshold && !isFixed) {
+//             // Make header fixed with slide down animation
+//             header.addClass("header-fixed");
+//             isFixed = true;
+//         } else if (scrollTop <= 1 && isFixed) {
+//             // Remove fixed class with slide up animation
+//             header.removeClass("header-fixed");
+//             isFixed = false;
+//         }
+//     });
+// });
 
 /**
  * !! Use requestAnimationFrame to continuously update the scroll

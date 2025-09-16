@@ -30,8 +30,11 @@
  * Notes:  
  *  - Tailwind's @apply directive is used to apply utility classes.
  */
+html,
 body {
     @apply font-noto;
+    scroll-behavior: smooth;
+    scroll-padding-top: 0px; /* offset for fixed header */
 }
 
 .container {
