@@ -1,0 +1,198 @@
+/**  
+ * main.css  
+ * by :- Kawsar Bin Siraj  
+ * created at :- 10/09/2025 10:02:37  
+ *  
+ * Description:  
+ *  This file is the entry point for global styles.  
+ *  - Imports TailwindCSS utilities, components, and base styles.  
+ *  - Can be extended with custom CSS rules.  
+ *  
+ * Notes:  
+ *  - Follow Tailwind's recommended layer usage (base, components, utilities).  
+ *  - Keep overrides minimal for maintainability.  
+ *  - Use variables and custom classes where necessary.  
+ *  
+ * Version: 4.0.0  
+ * Last Modified: 10/09/2025 10:02:37  
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+    --font-montserrat: "Montserrat", sans-serif;
+    --font-noto: "Noto Sans", sans-serif;
+}
+
+/**
+ * Notes:  
+ *  - Tailwind's @apply directive is used to apply utility classes.
+ */
+body {
+    @apply font-noto;
+}
+
+.container {
+    @apply mx-auto max-w-[1320px] px-5;
+}
+
+.section-title {
+    @apply font-montserrat text-[42px] md:text-[56px] font-black text-black text-center leading-14;
+}
+.section-subtitle {
+    @apply font-montserrat text-[20px] md:text-[32px] font-bold text-black text-center leading-8;
+}
+
+.cards {
+    @apply flex flex-wrap justify-center gap-[25px];
+}
+
+.card-item {
+    @apply flex-1 min-w-[300px] max-w-[calc(25%-18.75px)] block rounded-[20px] overflow-hidden bg-black;
+}
+
+.form-control {
+    @apply h-[60px] bg-[#1F1E1F] rounded-sm w-full text-white py-7 px-5 placeholder:text-white text-[16px] focus:outline-1 focus:outline-red-500;
+}
+
+/**
+ * game swiper css 
+ * by :- Kawsar Bin Siraj
+ * at :- 14/09/2025 11:48:03
+ *
+ * Styles:
+ * - Adds vertical padding to inactive slides
+ * - Ensures images inside slides are rounded with !important
+ */
+
+@media screen and (min-width: 768px) {
+    .gameSwiper .swiper-slide:not(.swiper-slide-active) .slide-img-wrapper {
+        @apply py-5;
+    }
+    .gameSwiper .swiper-slide .slide-img-wrapper img {
+        @apply !rounded-2xl;
+    }
+}
+
+/**
+ * licenseSwiper swiper css 
+ * by :- Kawsar Bin Siraj
+ * at :- 14/09/2025 11:48:03
+ *
+ * Styles:
+ * - Adds vertical padding to inactive slides
+ * - Ensures images inside slides are rounded with !important
+ */
+
+.licenseSwiper .swiper-content-wrapper {
+    @apply p-5;
+}
+
+.licenseSwiper .swiper-slide:not(.swiper-slide-active) .swiper-content-wrapper {
+    @apply !py-10;
+}
+
+.licenseSwiper .swiper-content-wrapper .slide-content {
+    @apply !rounded-2xl bg-white text-center py-5 px-8 sm:px-14 md:px-18 flex flex-col items-center justify-center shadow-[0px_2px_16px_0px_#0000001F];
+}
+
+/**
+ * Pulse animation
+ * by :- Kawsar Bin Siraj
+ * at :- 14/09/2025 17:47:41
+ */
+@keyframes pul-se {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0);
+    }
+}
+
+.hover:hover {
+    animation: pul-se 4s 1 cubic-bezier(0.23, 1, 0.32, 1) !important;
+}
+
+/**
+ * !! main header style
+ * by :- Kawsar Bin Siraj
+ * at :- 15/09/2025 09:44:58
+ */
+@keyframes slideDownHeader {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#main-header {
+    transition: all 0.3s ease-in-out;
+}
+
+#main-header.header-fixed {
+    position: fixed !important;
+    top: -100px;
+    animation: slideDownHeader 0.4s ease-out forwards;
+}
+
+#main-header.header-small {
+    @apply !py-2;
+}
+
+#nav {
+    --left: 0;
+    --width: 0%;
+    --opacity: 1;
+    --height: 100%;
+    --radius: 4px;
+    z-index: 10;
+}
+
+@keyframes pul-se-2 {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+}
+
+#nav a {
+    @apply rounded-sm block py-1 px-3;
+}
+
+.animated-line {
+    position: absolute;
+    left: var(--left);
+    width: var(--width);
+    height: var(--height);
+    bottom: 0;
+    transition: all 0.75s cubic-bezier(0.215, 0.61, 0.355, 1);
+    border-radius: 10px;
+    opacity: var(--opacity);
+    z-index: -10;
+    border-radius: var(--radius);
+    @apply bg-red-500;
+}
+
+@media screen and (max-width: 768px) {
+    #nav {
+        @apply py-3;
+    }
+    #nav a {
+        @apply hover:text-red-500 text-center text-[20px];
+    }
+    #menu-button * {
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    #menu-button.active svg path:nth-child(2) {
+        opacity: 0 !important;
+    }
+}

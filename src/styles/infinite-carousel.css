@@ -1,0 +1,41 @@
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-slide {
+    animation: slide 60s linear infinite;
+    animation-direction: normal;
+}
+
+.infinite-carousel {
+    --item-gap: 2em;
+    --slider-height: 120px;
+    display: flex;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 767px) {
+    .infinite-carousel {
+        --item-gap: 1em;
+    }
+}
+
+.infinite-carousel .ticker {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-shrink: 0;
+    gap: var(--item-gap);
+    min-width: 100%;
+    padding-right: calc(var(--item-gap));
+}
+
+.infinite-carousel .ticker img {
+    background-color: #fff;
+    height: var(--slider-height);
+}

@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "build:css": "tailwindcss -i ./src/styles/tw-input.css -o ./src/styles/tw-output.css --minify",
+        "watch:css": "tailwindcss -i ./src/styles/tw-input.css -o ./src/styles/tw-output.css --watch"
+    },
+    "dependencies": {
+        "@tailwindcss/cli": "^4.1.13",
+        "tailwindcss": "^4.1.13"
+    }
+}
