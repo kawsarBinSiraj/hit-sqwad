@@ -199,3 +199,13 @@ body {
         opacity: 0 !important;
     }
 }
+
+/**
+ * alert modal styles
+ * by :- Kawsar Bin Siraj
+ * at :- 17/09/2025 11:42:38
+ */
+
+.blocker {
+    z-index: 1000;
+}

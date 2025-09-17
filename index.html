@@ -11,13 +11,27 @@
         <link href="https://cdn.jsdelivr.net/npm/jarallax@2/dist/jarallax.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.11/dist/lenis.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
         <link rel="stylesheet" href="./src/styles/tw-output.css" />
         <!-- script -->
         <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     </head>
     <body>
+        <!-- modal -->
+        <div id="alert-modal" class="modal p-5 !py-10 !bg-[#171717] text-white w-full !rounded-lg !max-w-[575px] !text-center">
+            <img src="./src/images/logo-w.svg" alt="Logo" class="mx-auto inline-block mb-4 max-w-[280px]" />
+            <h3 class="title font-montserrat font-bold text-[40px] mb-4 leading-12"><span class="text-red-500">Welcome </span>to HITSqwad</h3>
+            <p class="mb-8 leading-8">You must be over <strong>18 years</strong> old to enter this site</p>
+            <div class="actions flex justify-center gap-4 mx-auto font-bold">
+                <a href="#" rel="modal:close" class="bg-[#10BC00] py-2 px-7 rounded-4xl">Yes, I am over 18</a>
+                <a href="index.html" class="bg-white text-black py-2 px-7 rounded-4xl">No, I am under 18</a>
+            </div>
+        </div>
+        <!-- modal -->
+
         <!-- header -->
         <header id="main-header" class="bg-[rgba(0,0,0,0.75)] py-3 md:py-5 text-white absolute w-full top-0 left-0 z-50 border-b border-1 border-black backdrop-blur-xs">
             <div class="container">
@@ -134,7 +148,12 @@
                                 alt="IMG"
                                 class="absolute origin-bottom-right w-full h-full object-cover object-center rounded-[33px] z-40"
                             />
-                            <img id="img-3" src="https://picsum.photos/id/27/200/300" alt="IMG" class="absolute origin-bottom-left w-full h-full object-cover object-center rounded-[33px] z-30" />
+                            <img
+                                id="img-3"
+                                src="https://picsum.photos/id/27/200/300"
+                                alt="IMG"
+                                class="absolute origin-bottom-left w-full h-full object-cover object-center rounded-[33px] z-30"
+                            />
                         </div>
                     </div>
                     <div class="about-content text-white space-y-4">
@@ -192,7 +211,7 @@
                                     .map(
                                         (_, i) => ` <a href="#" data-tilt data-tilt-max="12" class="card-item group">
                         <div class="card-img relative">
-                            <img src="./src/images/slot-3.png" alt="IMG" class="w-full h-[240px] object-cover object-center" />
+                            <img src="./src/images/slot-${[1, 3, 4][i % 3]}.png" alt="IMG" class="w-full h-[240px] object-cover object-center" />
                             <div class="overlay absolute bottom-0 left-0 w-full h-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_42.46%,#000000_98.37%)]"></div>
                         </div>
                         <div class="bg-black/90 text-left px-6 pb-4 mt-auto">
@@ -229,7 +248,7 @@
                                     .map(
                                         (_, i) => ` <a href="#" data-tilt data-tilt-max="12" class="card-item group">
                         <div class="card-img relative">
-                            <img src="/src/images/slot-2.jpg" alt="IMG" class="w-full h-[240px]" />
+                            <img src="/src/images/slot-${[1, 3, 4][i % 3]}.png" alt="IMG" class="w-full h-[240px]" />
                             <div class="overlay absolute bottom-0 left-0 w-full h-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_42.46%,#000000_98.37%)]"></div>
                         </div>
                         <div class="bg-black/90 text-left px-6 pb-4 mt-auto">
@@ -266,7 +285,7 @@
                                     .map(
                                         (_, i) => ` <a href="#" data-tilt data-tilt-max="12" class="card-item group">
                         <div class="card-img relative">
-                            <img src="/src/images/slot-4.png" alt="IMG" class="w-full h-[240px]" />
+                            <img src="/src/images/slot-${[1, 3, 4][i % 3]}.png" alt="IMG" class="w-full h-[240px]" />
                             <div class="overlay absolute bottom-0 left-0 w-full h-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_42.46%,#000000_98.37%)]"></div>
                         </div>
                         <div class="bg-black/90 text-left px-6 pb-4 mt-auto">
@@ -314,7 +333,7 @@
                                     .map(
                                         (_, i) => ` <a href="#" data-tilt data-tilt-max="12" class="card-item group">
                         <div class="card-img relative">
-                            <img src="/src/images/slot-2.jpg" alt="IMG" class="w-full h-[240px] object-cover object-center" />
+                            <img src="/src/images/slot-${[1, 3, 4][i % 3]}.png" alt="IMG" class="w-full h-[240px] object-cover object-center" />
                             <div class="overlay absolute bottom-0 left-0 w-full h-full bg-[linear-gradient(180deg,rgba(0,0,0,0)_42.46%,#000000_98.37%)]"></div>
                         </div>
                         <div class="bg-black/90 text-left px-6 pb-4 mt-auto">

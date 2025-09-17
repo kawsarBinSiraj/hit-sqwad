@@ -152,21 +152,6 @@ $(function () {
 // });
 
 /**
- * !! Use requestAnimationFrame to continuously update the scroll
- * !! Initialize Lenis
- * by :- Kawsar Bin Siraj
- * at :- 15/09/2025 10:54:34
- */
-$(function () {
-    const lenis = new Lenis();
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-});
-
-/**
  * !! hover effect
  * by :- Kawsar Bin Siraj
  * at :- 15/09/2025 15:27:20
@@ -258,5 +243,36 @@ $(function () {
                 scrub: true, // smooth movement tied to scroll
             },
         });
+    });
+});
+
+/**
+ * !! Use requestAnimationFrame to continuously update the scroll
+ * !! Modal Init
+ * !! Initialize Lenis
+ * by :- Kawsar Bin Siraj
+ * at :- 15/09/2025 10:54:34
+ */
+$(function () {
+    const lenis = new Lenis();
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    $("#alert-modal").modal({
+        fadeDuration: 250,
+        escapeClose: false,
+        clickClose: false,
+        showClose: false,
+    });
+
+    $(document).on($.modal.OPEN, function (event, modal) {
+        lenis.stop(); // stop scroll when modal opens
+    });
+
+    $(document).on($.modal.CLOSE, function (event, modal) {
+        lenis.start(); // start scroll again when modal closes
     });
 });
