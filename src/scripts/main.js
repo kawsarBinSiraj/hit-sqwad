@@ -212,6 +212,7 @@ $(function () {
                 scrub: true,
             },
         });
+        tl.to("#bg-shade", { scale: 1, duration: .6, ease: "power2.out" }, 0);
         tl.to("#img-1", { scale: 1.1, y: "20%", duration: 1, ease: "power2.out" }, 0);
         tl.to("#img-2", { x: "25%", y: "-2%", rotate: 20, duration: 1.2, ease: "power2.out" }, 0);
         tl.to("#img-3", { x: "-25%", y: "-2%", rotate: -20, duration: 1.2, ease: "power2.out" }, 0);
