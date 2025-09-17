@@ -34,7 +34,7 @@ html,
 body {
     @apply font-noto;
     scroll-behavior: smooth;
-    scroll-padding-top: 0px; /* offset for fixed header */
+    scroll-padding-top: 80px; /* offset for fixed header */
 }
 
 .container {
@@ -208,4 +208,10 @@ body {
 
 .blocker {
     z-index: 1000;
+}
+
+@media screen and (max-width: 600px) {
+    .blocker {
+        padding: 0 !important;
+    }
 }
